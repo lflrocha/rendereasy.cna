@@ -12,4 +12,20 @@
     meta_type="Factory-based Type Information with dynamic views" />
   <object name="CNA Destaque"
     meta_type="Factory-based Type Information with dynamic views" />
+  <object name="Card"
+    meta_type="Factory-based Type Information with dynamic views" />
+  <object name="Instagram"
+    meta_type="Factory-based Type Information with dynamic views" />
+  <object name="Twitter"
+    meta_type="Factory-based Type Information with dynamic views" />
+  <object name="Pergunta Resposta"
+    meta_type="Factory-based Type Information with dynamic views" />
+  <object name="Vinheta"
+    meta_type="Factory-based Type Information with dynamic views" />
+  <object name="Coluna"
+    meta_type="Factory-based Type Information with dynamic views" />
+  <object name="Foto"
+    meta_type="Factory-based Type Information with dynamic views" />
+  <object name="Album"
+    meta_type="Factory-based Type Information with dynamic views" />
 </object>

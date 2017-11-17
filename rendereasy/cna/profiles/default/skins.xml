@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<object name="portal_skins" allow_any="False" cookie_persistence="False"
+   default_skin="RenderEasy CNA">
+
+ <object name="rendereasy_cna_assets"
+    meta_type="Filesystem Directory View"
+    directory="rendereasy.cna:skins/rendereasy_cna_assets"/>
+ <object name="rendereasy_cna_templates"
+    meta_type="Filesystem Directory View"
+    directory="rendereasy.cna:skins/rendereasy_cna_templates"/>
+
+ <skin-path name="RenderEasy cna" based-on="Sunburst Theme">
+  <layer name="rendereasy_cna_assets"
+     insert-after="custom"/>
+  <layer name="rendereasy_cna_templates"
+     insert-after="rendereasy_cna_assets"/>
+ </skin-path>
+
+</object>

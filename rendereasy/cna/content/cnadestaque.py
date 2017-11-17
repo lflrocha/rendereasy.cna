@@ -14,22 +14,24 @@ from rendereasy.cna import cnaMessageFactory as _
 from rendereasy.cna.interfaces import ICNADestaque
 from rendereasy.cna.config import PROJECTNAME
 
+from Products.ATVocabularyManager import NamedVocabulary
 from DateTime.DateTime import *
+from Products.CMFPlone.utils import getToolByName
+from string import join
 
 CNADestaqueSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
 
     # -*- Your Archetypes field definitions here ... -*-
 
     atapi.LinesField(
-        'jornal',
+        'veiculo',
         storage=atapi.AnnotationStorage(),
-        widget=atapi.LinesWidget(
-            label=_(u"Jornal"),
+        widget=atapi.SelectionWidget(
+            label=_(u"Veículo"),
         ),
+        vocabulary=NamedVocabulary("veiculos"),
         required=True,
-        vocabulary="getVocabularyJornais"
     ),
-
 
     atapi.DateTimeField(
         'data',
@@ -39,11 +41,10 @@ CNADestaqueSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
             starting_year='2017',
             show_hm=False,
         ),
-        validators=('isValidDate'),
         required=True,
+        validators=('isValidDate'),
         default_method = 'getDefaultTime',
     ),
-
 
     atapi.TextField(
         'texto',
@@ -75,12 +76,11 @@ CNADestaqueSchema['excludeFromNav'].widget.visible = {"edit": "invisible", "view
 CNADestaqueSchema['subject'].widget.visible = {"edit": "invisible", "view": "invisible"}
 CNADestaqueSchema['relatedItems'].widget.visible = {"edit": "invisible", "view": "invisible"}
 
-
 schemata.finalizeATCTSchema(CNADestaqueSchema, moveDiscussion=False)
 
 
 class CNADestaque(base.ATCTContent):
-    """Description of the Example Type"""
+    """ """
     implements(ICNADestaque)
 
     meta_type = "CNADestaque"
@@ -90,29 +90,12 @@ class CNADestaque(base.ATCTContent):
     description = atapi.ATFieldProperty('description')
 
     # -*- Your ATSchema to Python Property Bridges Here ... -*-
-    jornal = atapi.ATFieldProperty('jornal')
-
+    veiculo = atapi.ATFieldProperty('veiculo')
     data = atapi.ATFieldProperty('data')
-
     texto = atapi.ATFieldProperty('texto')
-
 
     def getDefaultTime(self):
         return DateTime()
-
-    def getVocabularyJornais(self):
-            return ['Folha de S. Paulo', 'O Estado de S. Paulo', 'O Globo', 'Valor Econômico' ]
-
-    def getDados(self):
-        jornal = self.getJornal()
-        aux = '  name: "clipping_CNA",\n'
-        aux = aux + '  tempo: 7,\n'
-        aux = aux + '  jornal: "%s",\n' % jornal[0]
-        aux = aux + '  mensagemTitulo: "%s",\n' % self.Title()
-        aux = aux + '  mensagemSubtitulo: "%s",\n' % self.getTexto().replace('\r\n','\\n')
-        aux = aux + '  data: "%s",\n' % self.getData().strftime('%d/%m/%Y')
-        aux = aux + '  logoJornal: "%s.png"\n' % jornal[0]
-        return aux
 
 
 atapi.registerType(CNADestaque, PROJECTNAME)

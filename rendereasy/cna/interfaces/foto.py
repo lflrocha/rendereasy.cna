@@ -6,13 +6,19 @@ from rendereasy.cna import cnaMessageFactory as _
 
 
 
-class ICNADestaques(Interface):
+class IFoto(Interface):
     """Description of the Example Type"""
 
     # -*- schema definition goes here -*-
-    downloadlink = schema.TextLine(
-        title=_(u"Download Link"),
+    legenda = schema.TextLine(
+        title=_(u"Legenda"),
         required=False,
+        description=_(u"Field description"),
+    )
+#
+    legenda = schema.Bytes(
+        title=_(u"Arquivo"),
+        required=True,
         description=_(u"Field description"),
     )
 #

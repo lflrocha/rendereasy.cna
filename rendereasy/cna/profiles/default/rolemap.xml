@@ -10,5 +10,37 @@
       <role name="Manager" />
       <role name="Contributor" />
     </permission>
+    <permission name="rendereasy.cna: Add Card" acquire="False">
+      <role name="Manager" />
+      <role name="Contributor" />
+    </permission>
+    <permission name="rendereasy.cna: Add Instagram" acquire="False">
+      <role name="Manager" />
+      <role name="Contributor" />
+    </permission>
+    <permission name="rendereasy.cna: Add Twitter" acquire="False">
+      <role name="Manager" />
+      <role name="Contributor" />
+    </permission>
+    <permission name="rendereasy.cna: Add Pergunta Resposta" acquire="False">
+      <role name="Manager" />
+      <role name="Contributor" />
+    </permission>
+    <permission name="rendereasy.cna: Add Vinheta" acquire="False">
+      <role name="Manager" />
+      <role name="Contributor" />
+    </permission>
+    <permission name="rendereasy.cna: Add Coluna" acquire="False">
+      <role name="Manager" />
+      <role name="Contributor" />
+    </permission>
+    <permission name="rendereasy.cna: Add Foto" acquire="False">
+      <role name="Manager" />
+      <role name="Contributor" />
+    </permission>
+    <permission name="rendereasy.cna: Add Album" acquire="False">
+      <role name="Manager" />
+      <role name="Contributor" />
+    </permission>
   </permissions>
 </rolemap>

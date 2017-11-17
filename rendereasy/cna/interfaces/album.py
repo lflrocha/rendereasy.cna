@@ -6,7 +6,7 @@ from rendereasy.cna import cnaMessageFactory as _
 
 
 
-class ICNADestaques(Interface):
+class IAlbum(Interface):
     """Description of the Example Type"""
 
     # -*- schema definition goes here -*-

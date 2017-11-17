@@ -10,15 +10,15 @@ class ICNADestaque(Interface):
     """Description of the Example Type"""
 
     # -*- schema definition goes here -*-
-    jornal = schema.List(
-        title=_(u"Jornal"),
+    veiculo = schema.List(
+        title=_(u"Veiculo"),
         required=False,
         description=_(u"Field description"),
     )
 #
     data = schema.Date(
         title=_(u"Data"),
-        required=False,
+        required=True,
         description=_(u"Field description"),
     )
 #

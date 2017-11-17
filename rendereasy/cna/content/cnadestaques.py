@@ -9,13 +9,27 @@ from Products.ATContentTypes.content import folder
 from Products.ATContentTypes.content import schemata
 
 # -*- Message Factory Imported Here -*-
+from rendereasy.cna import cnaMessageFactory as _
 
 from rendereasy.cna.interfaces import ICNADestaques
 from rendereasy.cna.config import PROJECTNAME
 
+from DateTime.DateTime import *
+from Products.CMFPlone.utils import getToolByName
+from string import join
+
 CNADestaquesSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     # -*- Your Archetypes field definitions here ... -*-
+
+    atapi.StringField(
+        'downloadlink',
+        storage=atapi.AnnotationStorage(),
+        widget=atapi.StringWidget(
+            label=_(u"Download link"),
+        ),
+    ),
+
 
 ))
 
@@ -37,7 +51,7 @@ CNADestaquesSchema['excludeFromNav'].widget.visible = {"edit": "invisible", "vie
 CNADestaquesSchema['subject'].widget.visible = {"edit": "invisible", "view": "invisible"}
 CNADestaquesSchema['relatedItems'].widget.visible = {"edit": "invisible", "view": "invisible"}
 CNADestaquesSchema['nextPreviousEnabled'].widget.visible = {"edit": "invisible", "view": "invisible"}
-
+CNADestaquesSchema['downloadlink'].widget.visible = {"edit": "invisible", "view": "invisible"}
 
 schemata.finalizeATCTSchema(
     CNADestaquesSchema,
@@ -47,7 +61,7 @@ schemata.finalizeATCTSchema(
 
 
 class CNADestaques(folder.ATFolder):
-    """Description of the Example Type"""
+    """ """
     implements(ICNADestaques)
 
     meta_type = "CNADestaques"
@@ -57,6 +71,8 @@ class CNADestaques(folder.ATFolder):
     description = atapi.ATFieldProperty('description')
 
     # -*- Your ATSchema to Python Property Bridges Here ... -*-
+    downloadlink = atapi.ATFieldProperty('downloadlink')
+
     def getDestaques(self):
         pc = getToolByName(self, 'portal_catalog')
         path = join(self.getPhysicalPath(), '/')

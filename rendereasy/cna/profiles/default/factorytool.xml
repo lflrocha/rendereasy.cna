@@ -12,5 +12,13 @@
     <!-- -*- extra stuff goes here -*- -->
     <type portal_type="CNA Destaques" />
     <type portal_type="CNA Destaque" />
+    <type portal_type="Card" />
+    <type portal_type="Instagram" />
+    <type portal_type="Twitter" />
+    <type portal_type="Pergunta Resposta" />
+    <type portal_type="Vinheta" />
+    <type portal_type="Coluna" />
+    <type portal_type="Foto" />
+    <type portal_type="Album" />
   </factorytypes>
 </object>
