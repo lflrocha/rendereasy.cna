@@ -9,7 +9,7 @@
     meta_type="Filesystem Directory View"
     directory="rendereasy.cna:skins/rendereasy_cna_templates"/>
 
- <skin-path name="RenderEasy cna" based-on="Sunburst Theme">
+ <skin-path name="RenderEasy CNA" based-on="Sunburst Theme">
   <layer name="rendereasy_cna_assets"
      insert-after="custom"/>
   <layer name="rendereasy_cna_templates"
