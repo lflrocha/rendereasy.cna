@@ -113,6 +113,7 @@ class Card(base.ATCTContent):
         novoProjeto =  DateTime().strftime("%Y%m%d%H%M%S") + '_' + self.meta_type
 
         aux = 'var ext_novoProjeto = "%s";\n' % novoProjeto
+        aux = aux + 'var ext_telas = [\n'
         aux = aux + '{\n'
         aux = aux + 'name: "card",\n'
         aux = aux + 'modelo: 1,\n'
@@ -120,7 +121,7 @@ class Card(base.ATCTContent):
         aux = aux + 'subtitulo: "%s",\n' % subtitulo
         aux = aux + 'foto: "%s",\n' % foto
         aux = aux + 'data: "%s",\n' % data.strftime('%d-%b')
-        aux = aux + '}, \n'
+        aux = aux + '} \n'
         aux = aux + ']\n'
         aux = aux + 'var arquivos = ['
         aux = aux + '("%s/at_download/foto/", "%s"), ' % (endereco, foto)
