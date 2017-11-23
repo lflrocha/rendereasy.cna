@@ -1,4 +1,5 @@
 # -*- extra stuff goes here -*-
+from card import ICard
 from cnadestaques import ICNADestaques
 from cnadestaque import ICNADestaque
 from card import ICard

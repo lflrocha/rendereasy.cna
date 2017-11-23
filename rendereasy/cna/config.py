@@ -5,6 +5,7 @@ PROJECTNAME = 'rendereasy.cna'
 
 ADD_PERMISSIONS = {
     # -*- extra stuff goes here -*-
+    'Card': 'rendereasy.cna: Add Card',
     'CNADestaques': 'rendereasy.cna: Add CNA Destaques',
     'CNADestaque': 'rendereasy.cna: Add CNA Destaque',
     'Card': 'rendereasy.cna: Add Card',
