@@ -94,6 +94,7 @@ class CNADestaques(folder.ATFolder):
         telas = telas[:-2] + '];\n'
 
         aux = aux + 'var ext_Telas = ' + telas
+        aux = aux + 'var arquivos = [];'
 
         return aux
 
